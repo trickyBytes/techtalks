@@ -1,0 +1,40 @@
+Creating a Clojure web-application without setting your hair on fire
+
+* Introduction
+
+* Clojure Builds Tool
+** Leningen - Which I'm going to use for this demonstration
+** Boot
+
+* IDE's
+** EMACS + CiDer
+** Lighttable
+** Visual Code
+
+* Creating a simple web application
+- Using two clojure libraries, Ring and built ontop of this Compojure
+- Create a new web-application using leiningen
+- lein new compojure costain-techtalk
+- Open the file project.clj to see the project file including depdencies
+- Dependency management is carried out using maven behind the scenes
+- The web-application can be run using lein and ring on an embedded Jetty Server
+- We can also created a self contained jar
+- lein ring uberjar
+
+** Rendering views
+*** Request mapping user handler, add new mapping
+*** Make the output look nice using hiccup
+**** Using library https://github.com/weavejester/hiccup
+**** Import the library into the project [hiccup "1.0.5"]
+**** Use the library in out handler [hiccup.page :as h]
+**** Make the handler return some html
+(h/html5
+[:head [:title "Tech Talk"]]
+[:body ""])
+
+** Handling Request Parameters
+*** As parth variables
+*** As request parameters using de-construction
+
+
+** Returning responses as JSON
