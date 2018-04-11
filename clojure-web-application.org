@@ -7,10 +7,19 @@
 -switch window C-x o
 
 * Introduction
+- Lisp like programming language
+- Predominantly a function programming language
+- Information is represented in both immutable and persistent data-structures
+
+* Why Clojure
+- Lightweight language in the same family as Python, Ruby
+- Tooling including great repl means quick developer feedback
+- Compiles down to java byte code
+- Can use existing Java libraries
   
 * Pre-requisits
-A JDK, using version 8 for this demonstration
-
+- A JDK, using version 8 for this demonstration
+- I've also downloaded the build tool Leiningen
 
 * Clojure Builds Tool
 ** Leningen - Which I'm going to use for this demonstration
@@ -21,7 +30,6 @@ A JDK, using version 8 for this demonstration
 ** EMACS + CiDer
 ** Lighttable
 ** Visual Code   
-   
 
 * Creating a simple web application
 ** Using two clojure libraries, Ring and built ontop of this Compojure
