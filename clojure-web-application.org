@@ -25,14 +25,15 @@
 ** Leningen - Which I'm going to use for this demonstration
 ** Boot
 
-
 * IDE's
 ** EMACS + CiDer
 ** Lighttable
 ** Visual Code   
 
 * Creating a simple web application
-** Using two clojure libraries, Ring and built ontop of this Compojure
+** Using two clojure libraries, Ring and built on-top of this Compojure
+- Ring is a library that enables request handling, application server
+- Compojure is a wrapper over the top of ring compose request mappings
 ** Create a new web-application using leiningen
 lein new compojure costain-techtalk
 ** Open the file project.clj to see the project file including depdencies
@@ -41,8 +42,6 @@ lein new compojure costain-techtalk
 ** We can also create a self contained jar
 lein ring uberjar
 java -jar target/costain-techtalk-0.1.0-SNAPSHOT-standalone.jar
-
-
 ** Rendering views
 *** Request mapping user handler, add new mapping
 *** Format the output as html using hiccup
@@ -55,7 +54,6 @@ java -jar target/costain-techtalk-0.1.0-SNAPSHOT-standalone.jar
 (h/html5
 [:head [:title "Tech Talk"]]
 [:body ""])
-
 
 ** Handling Request Parameters
 *** As parth variables
