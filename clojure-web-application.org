@@ -2,6 +2,10 @@
 #+AUTHOR:    Richard Tiffin
 #+EMAIL:     richard.tiffin@costain.com
 
+* Set-up
+-emacs zoom 'C-x C-+'
+-switch window C-x o
+
 * Introduction
   
 * Pre-requisits
@@ -33,11 +37,12 @@ java -jar target/costain-techtalk-0.1.0-SNAPSHOT-standalone.jar
 
 ** Rendering views
 *** Request mapping user handler, add new mapping
-*** Make the output look nice using hiccup
+*** Format the output as html using hiccup
 **** Using library https://github.com/weavejester/hiccup
 **** Import the library into the project 
-[hiccup "1.0.5"]
-**** Use the library in out handler [hiccup.page :as h]
+     [hiccup "1.0.5"]
+**** Use the library in out handler 
+[hiccup.page :as h]
 **** Make the handler return some html
 (h/html5
 [:head [:title "Tech Talk"]]
@@ -46,8 +51,28 @@ java -jar target/costain-techtalk-0.1.0-SNAPSHOT-standalone.jar
 
 ** Handling Request Parameters
 *** As parth variables
+**** Alter one of the mappings to take a path variable
+(GET "/tech-talk/:title"
+       {{title :title} :params :as params}
+       (h/html5
+        [:head [:title title]]
+        [:body [:div
+                [:h1 title]
+                [:p "Content"]]]))
 *** As request parameters using de-construction
+- length :length
+- add length to body
+- Show as a get
 
+*** Show how to change the response to a post
+**** Change request to post
+**** Fix the security thing by changing wrap to
+ (wrap-defaults (assoc-in site-defaults [:security :anti-forgery] false))
+**** Show the http post
+- http POST localhost:3000/tech-talk/clojure
+**** Expect a parameer in post request
+- Add lenth as paramater and put into body
+- Use http request -f POST localhost:3000/tech-talk/clojure length=30m
 
 ** Returning responses as JSON
 *** A closer look at the requse handler code
